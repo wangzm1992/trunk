@@ -1,0 +1,49 @@
+
+# ----------------------------------------------
+# Example macro file for the DmpSimu
+# ----------------------------------------------
+# Author(s): Fabio Gargano 2014-3320
+#   - macro to test simulation time for one orbit
+# ----------------------------------------------
+
+/root/GenTree true
+/root/RootFile DmpGen_Test
+
+#
+# Sets some default verbose
+#
+/control/verbose 0
+/control/saveHistory
+/run/verbose 0
+/tracking/storeTrajectory 0
+
+
+#/gun/sourceGen 0 
+# 0 particle gun
+# 1 GPS 
+/gun/sourceGen 1
+
+## to set the generation radius 
+## if not set it is set to the default value max(0.5*PayLoadSizeXY,0.5*PayLoadSizeZ)+50.; 
+
+## generation over a halph sphere with   unif. distrib.-1<Cos(Theta)<0
+/gun/vertexRadius 0.977 m
+/gun/sourceType 7
+
+## trial spectrum with alpha = -1
+/gun/spectrumType 2
+/gps/ene/min 1.00 GeV
+/gps/ene/max 1.00 TeV
+
+
+
+
+
+/run/initialize
+
+/gps/particle proton
+
+# run 10 events
+/run/beamOn 1000
+
+

@@ -1,0 +1,283 @@
+# ----------------------------------------------
+# Example macro file for the DmpSimu
+# ----------------------------------------------
+# Author(s): Andrii Tykhonov
+#    used for STK charge sharing studies
+# ----------------------------------------------
+
+
+#
+# Sets some default verbose
+#
+/control/verbose 2
+/control/saveHistory
+/run/verbose 1
+/tracking/storeTrajectory 2
+#/tracking/verbose 1
+
+/gun/sourceGen 1
+/gun/sourceType 3
+
+/gps/particle mu- 
+# the following two lines are equivalent
+#/gps/ene/type Mono 
+/gun/spectrumType 0
+
+
+#/stk/thicknessThickW 1 mm
+#/payload/update
+
+
+#/gun/setParticlePosition 0.0 0.0 -100.0
+#/gun/setParticleMomentumDirection  0.0   0.0  -1.0
+
+/gun/setParticlePosition 0.0 0.0 -1000.0
+/gun/setParticleMomentumDirection  0.0   0.0  1.0
+
+
+######################################################################
+## Fragment of python script used to produce the macro
+#
+#
+#
+#lambda m: (0.1057**2 + m**2)**0.5 - 0.1057  #conversion of muon momentum to muon kinetic energy
+#for i in xrange(0,20):
+#    print ""
+#    print "# %.2f - %.2f p_muean=%.3f"%(0.01*i,0.01*i+0.01,0.01*i+0.005)
+#    print "/root/RootFile DmpSimu_Muon_%da"%i
+#    print "/gps/ene/mono %f GeV"%f(0.01*i+0.005)
+#    print "/run/beamOn 357"
+#
+#####################################################################
+
+
+
+#-----------------------------------------------------------
+#   Low energy data is extrapolated from 0.2-0.4 GeV region, 
+#   assuming flat distribution
+#-----------------------------------------------------------
+
+
+# 0.00 - 0.01 p_muean=0.005
+/root/RootFile DmpSimu_Muon_0a
+/gps/ene/mono 0.000118 GeV
+/run/beamOn 357
+
+# 0.01 - 0.02 p_muean=0.015
+/root/RootFile DmpSimu_Muon_1a
+/gps/ene/mono 0.001059 GeV
+/run/beamOn 357
+
+# 0.02 - 0.03 p_muean=0.025
+/root/RootFile DmpSimu_Muon_2a
+/gps/ene/mono 0.002916 GeV
+/run/beamOn 357
+
+# 0.03 - 0.04 p_muean=0.035
+/root/RootFile DmpSimu_Muon_3a
+/gps/ene/mono 0.005644 GeV
+/run/beamOn 357
+
+# 0.04 - 0.05 p_muean=0.045
+/root/RootFile DmpSimu_Muon_4a
+/gps/ene/mono 0.009180 GeV
+/run/beamOn 357
+
+# 0.05 - 0.06 p_muean=0.055
+/root/RootFile DmpSimu_Muon_5a
+/gps/ene/mono 0.013453 GeV
+/run/beamOn 357
+
+# 0.06 - 0.07 p_muean=0.065
+/root/RootFile DmpSimu_Muon_6a
+/gps/ene/mono 0.018387 GeV
+/run/beamOn 357
+
+# 0.07 - 0.08 p_muean=0.075
+/root/RootFile DmpSimu_Muon_7a
+/gps/ene/mono 0.023905 GeV
+/run/beamOn 357
+
+# 0.08 - 0.09 p_muean=0.085
+/root/RootFile DmpSimu_Muon_8a
+/gps/ene/mono 0.029937 GeV
+/run/beamOn 357
+
+# 0.09 - 0.10 p_muean=0.095
+/root/RootFile DmpSimu_Muon_9a
+/gps/ene/mono 0.036418 GeV
+/run/beamOn 357
+
+# 0.10 - 0.11 p_muean=0.105
+/root/RootFile DmpSimu_Muon_10a
+/gps/ene/mono 0.043288 GeV
+/run/beamOn 357
+
+# 0.11 - 0.12 p_muean=0.115
+/root/RootFile DmpSimu_Muon_11a
+/gps/ene/mono 0.050497 GeV
+/run/beamOn 357
+
+# 0.12 - 0.13 p_muean=0.125
+/root/RootFile DmpSimu_Muon_12a
+/gps/ene/mono 0.057999 GeV
+/run/beamOn 357
+
+# 0.13 - 0.14 p_muean=0.135
+/root/RootFile DmpSimu_Muon_13a
+/gps/ene/mono 0.065757 GeV
+/run/beamOn 357
+
+# 0.14 - 0.15 p_muean=0.145
+/root/RootFile DmpSimu_Muon_14a
+/gps/ene/mono 0.073737 GeV
+/run/beamOn 357
+
+# 0.15 - 0.16 p_muean=0.155
+/root/RootFile DmpSimu_Muon_15a
+/gps/ene/mono 0.081910 GeV
+/run/beamOn 357
+
+# 0.16 - 0.17 p_muean=0.165
+/root/RootFile DmpSimu_Muon_16a
+/gps/ene/mono 0.090253 GeV
+/run/beamOn 357
+
+# 0.17 - 0.18 p_muean=0.175
+/root/RootFile DmpSimu_Muon_17a
+/gps/ene/mono 0.098744 GeV
+/run/beamOn 357
+
+# 0.18 - 0.19 p_muean=0.185
+/root/RootFile DmpSimu_Muon_18a
+/gps/ene/mono 0.107367 GeV
+/run/beamOn 357
+
+# 0.19 - 0.20 p_muean=0.195
+/root/RootFile DmpSimu_Muon_19a
+/gps/ene/mono 0.116105 GeV
+/run/beamOn 357
+
+
+
+
+#-----------------------------------------------------------
+#   The following data are taken from:
+#          http://dx.doi.org/10.1016/0370-2693(71)90741-6
+#-----------------------------------------------------------
+
+
+# 0.2 - 0.3  p_mean = 0.25
+/root/RootFile DmpSimu_Muon_1
+/gps/ene/mono 0.16572676728723718 GeV
+#/run/beamOn 1000 * 3.57
+/run/beamOn 3570
+
+# 0.3 - 0.4  p_mean = 0.35
+/root/RootFile DmpSimu_Muon_2
+/gps/ene/mono 0.25991248611063594 GeV
+#/run/beamOn 1000 * 3.57
+/run/beamOn 3570
+
+# 0.4 - 0.5  p_mean = 0.45
+/root/RootFile DmpSimu_Muon_3
+/gps/ene/mono 0.3565472174064437 GeV
+#/run/beamOn 1000 * 3.70
+/run/beamOn 3700
+
+# 0.5 - 0.6  p_mean = 0.55
+/root/RootFile DmpSimu_Muon_4
+/gps/ene/mono 0.454364719474455 GeV
+#/run/beamOn 1000 * 3.70
+/run/beamOn 3700
+
+# 0.6 - 0.7  p_mean = 0.65
+/root/RootFile DmpSimu_Muon_5
+/gps/ene/mono 0.5528381461995956 GeV
+#/run/beamOn 1000 * 3.41
+/run/beamOn 3410
+
+# 0.7 - 0.8  p_mean = 0.75
+/root/RootFile DmpSimu_Muon_6
+/gps/ene/mono 0.6517117044250108 GeV
+#/run/beamOn 1000 * 3.41
+/run/beamOn 3410
+
+# 0.8 - 0.9  p_mean = 0.85
+/root/RootFile DmpSimu_Muon_7
+/gps/ene/mono 0.7508468405172013 GeV
+#/run/beamOn 1000 * 3.41
+/run/beamOn 3410
+
+# 0.9 - 1.0  p_mean = 0.95
+/root/RootFile DmpSimu_Muon_8
+/gps/ene/mono 0.8501621710267647 GeV
+#/run/beamOn 1000 * 3.41
+/run/beamOn 3410
+
+# 1.0 - 1.5  p_mean = 1.24
+/root/RootFile DmpSimu_Muon_9
+/gps/ene/mono 1.1387968822781358 GeV
+#/run/beamOn 1000 * 5 * 2.73
+/run/beamOn 13650
+
+# 1.5 - 2.5  p_mean = 1.95
+/root/RootFile DmpSimu_Muon_10
+/gps/ene/mono 1.8471626398187866 GeV
+#/run/beamOn 1000 * 10 * 1.73
+/run/beamOn 17300
+
+# 2.5 - 4.0  p_mean = 3.17
+/root/RootFile DmpSimu_Muon_11
+/gps/ene/mono 3.0660617328544713 GeV
+#/run/beamOn 1000 * 15 * 0.792
+/run/beamOn 11880
+
+# 4.0 - 6.0  p_mean = 4.91
+/root/RootFile DmpSimu_Muon_12
+/gps/ene/mono 4.8054375963212435 GeV
+#/run/beamOn 1000 * 20 * 0.424
+/run/beamOn 8480
+
+# 6.0 - 10.0  p_mean = 7.76
+/root/RootFile DmpSimu_Muon_13
+/gps/ene/mono 7.655019843545443 GeV
+#/run/beamOn 1000 * 40 * 0.184
+/run/beamOn 7360
+
+# 10.0 - 13.0  p_mean = 11.4
+/root/RootFile DmpSimu_Muon_14
+/gps/ene/mono 11.294790010960055 GeV
+#/run/beamOn 1000 * 30 * 0.113
+/run/beamOn 3390
+
+# 13.0 - 17.0  p_mean = 14.8
+/root/RootFile DmpSimu_Muon_15
+/gps/ene/mono 14.69467744417351 GeV
+#/run/beamOn 1000 * 40 * 0.0604
+/run/beamOn 2416
+
+# 17.0 - 25.0  p_mean = 20.5
+/root/RootFile DmpSimu_Muon_16
+/gps/ene/mono 20.394572497945 GeV
+#/run/beamOn 1000 * 80 * 0.0251
+/run/beamOn 2008
+
+# 25.0 - 40.0  p_mean = 31.4
+/root/RootFile DmpSimu_Muon_17
+/gps/ene/mono 31.294477905387733 GeV
+#/run/beamOn 1000 * 150 * 0.00801
+/run/beamOn 1201
+
+# 40.0 - 70.0  p_mean = 52.3
+/root/RootFile DmpSimu_Muon_18
+/gps/ene/mono 52.194406811458805 GeV
+#/run/beamOn 1000 * 300 * 0.00189
+/run/beamOn 567
+
+# 70.0 - 128.0  p_mean = 93.0
+/root/RootFile DmpSimu_Muon_19
+/gps/ene/mono 92.89436006713115 GeV
+#/run/beamOn 1000 * 580 * 0.000338
+/run/beamOn 196
+

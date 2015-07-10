@@ -1,0 +1,33 @@
+# ----------------------------------------------
+# Example macro file for the DmpSimu
+# ----------------------------------------------
+# Author(s): Andrii Tykhonov
+#    used for debugging the STK tracking
+# ----------------------------------------------
+
+
+#
+# Sets some default verbose
+#
+/control/verbose 2
+/control/saveHistory
+/run/verbose 1
+/tracking/storeTrajectory 2
+#/tracking/verbose 1
+
+/gun/sourceGen 1
+/gun/sourceType 8
+
+/gps/particle mu- 
+# the following two lines are equivalent
+#/gps/ene/type Mono 
+/gun/spectrumType 0
+
+
+#/stk/thicknessThickW 1 mm
+#/payload/update
+
+
+/gps/ene/mono  500. MeV
+/gps/ang/mintheta 0 deg 
+/gps/ang/maxtheta 5 deg    

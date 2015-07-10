@@ -1,0 +1,33 @@
+# ----------------------------------------------
+# Example macro file for the DmpSimulation
+# ----------------------------------------------
+# Authors: Xin Wu 
+#         use 
+#            ./dmpSim test_Helium_power_lowE_sphere.mac true
+#         to run generation only job. Tree is dampeGenEvt
+# ----------------------------------------------
+
+/root/RootFile DmpSimu_Helium_Power_lowE_sphere_genOnly
+/root/CalEcut -1 MeV
+
+/control/verbose 2
+/control/saveHistory
+/run/verbose 1
+/tracking/storeTrajectory 2
+#/tracking/verbose 1
+
+#/run/initialize
+
+/gun/sourceGen 1 
+/gun/sourceType 1 
+/gun/spectrumType 2
+
+
+/gps/ion 2 4 2
+/gps/ene/min 500 MeV
+/gps/ene/max 11.76 GeV
+
+# run
+/run/beamOn 1000
+
+

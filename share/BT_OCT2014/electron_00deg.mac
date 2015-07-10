@@ -1,0 +1,102 @@
+#@ ----------------------------------------------
+#@ Example macro file for the DmpSimu
+#@ ----------------------------------------------
+#@ Author(s): Xin Wu 
+#@ Revised: Fan Rui Rui	2013-8-14
+#@ Revised: Xin Wu	2013-9-24
+#@ Revised: Andrii Tykhonov 2014-10-26
+#@   - set ouput file name
+#@   - switch to use Fabio's generator by setting /gun/sourceGen 1 
+#@ ----------------------------------------------
+#@
+#@  For documentation on geant4 commsnds see:
+#@    http://www.hep.ph.ic.ac.uk/~bek07/comet/SimG4/macro_commands/_gps_ene_.html
+#@    http://www.hep.ph.ic.ac.uk/~bek07/comet/SimG4/macro_commands/_gps_ang_.html
+#@    http://www.hep.ph.ic.ac.uk/~bek07/comet/SimG4/macro_commands/_gps_pos_.html
+#@
+
+
+
+
+#/root/RootFile DmpSimu_Electron_100GeV
+
+#
+# Sets some default verbose
+#
+/control/verbose 2
+/control/saveHistory
+/run/verbose 1
+/tracking/storeTrajectory 2
+
+############################################################################################################################################################
+####  NOTE: The particle source is assumed to be placed 20m from DAMPE, i.e  y= - 20m * sin(30deg) = - 10m ;  z = -20m * cos(30 deg) =  -17.320508075688775
+############################################################################################################################################################
+
+
+
+#@
+#@ Simplified particle source (ideal one)
+#@
+
+#/gun/sourceGen 1
+#/gun/sourceType 0
+#/gun/spectrumType 0
+#/gps/particle e- 
+#/gps/ene/mono 100 GeV
+#/gps/pos/centre 0.005  0.005 -20. m  
+#/gps/direction  0.     0.     20.    
+##-----------------------------------------------------------------------------------------------------##
+##  x,y position of source  is shifted for 5mm in order not to hit exactly into an XY center of DAMPE  ##
+##-----------------------------------------------------------------------------------------------------##
+
+
+
+
+
+
+
+###/gun/spectrumType 0
+###/gps/particle e- 
+###/gps/ene/mono 100 GeV
+###/gun/sourceGen 8
+###/gps/direction 0.     0.     20.
+
+
+
+#@
+#@ Realistic particle source (PS)
+#@ 
+
+#@  -------------  particle generator ----------------
+/gun/sourceGen  1
+
+#@  -------------  position ----------------
+/gps/pos/type   Plane
+/gps/pos/shape  Rectangle
+/gps/pos/rot1   1 0 0
+/gps/pos/rot1   0 1 0
+/gps/pos/centre 0.0  0.0 -20. m
+/gps/pos/halfx  5 mm
+/gps/pos/halfy  5 mm  
+
+#@  -------------  angle ----------------    
+/gps/ang/type     iso
+/gps/ang/rot1     0 1 0
+/gps/ang/rot2     1 0 0
+/gps/ang/mintheta 0 mrad
+/gps/ang/maxtheta 5 mrad
+/gps/ang/minphi   0   deg
+/gps/ang/maxphi   360 deg
+
+#@  ------------- particle type ----------------
+/gps/particle e- 
+
+#@  -------------  energy spectrum ----------------
+/gps/ene/type  Pow        # uniform ebergy distrubution
+/gps/ene/alpha 0          # 
+/gps/ene/min   9.85  GeV  # energy spread of ~1.5%
+/gps/ene/max   10.15 GeV  # energy spread of ~1.5%
+
+
+
+

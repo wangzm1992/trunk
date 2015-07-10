@@ -1,0 +1,38 @@
+# ----------------------------------------------
+# Example macro file for the DmpSimu
+# ----------------------------------------------
+# Author(s): Andrii Tykhonov
+#    used for STK charge sharing studies
+# ----------------------------------------------
+
+/root/RootFile DmpSimu_Muon_10GeV
+#
+# Sets some default verbose
+#
+/control/verbose 2
+/control/saveHistory
+/run/verbose 1
+/tracking/storeTrajectory 2
+#/tracking/verbose 1
+
+/gun/sourceGen 1
+/gun/sourceType 3
+
+/gps/particle mu- 
+# the following two lines are equivalent
+#/gps/ene/type Mono 
+/gun/spectrumType 0
+/gps/ene/mono 10 GeV
+
+#/stk/thicknessThickW 1 mm
+#/payload/update
+
+
+/gun/setParticlePosition 0.0 0.0 -100.0
+/gun/setParticleMomentumDirection  0.0   0.0  -1.0
+
+
+# run 100 events
+/run/beamOn 100
+
+

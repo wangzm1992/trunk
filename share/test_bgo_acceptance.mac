@@ -1,0 +1,143 @@
+# ----------------------------------------------
+# Example macro file for the DmpSimu
+# ----------------------------------------------
+# Author(s): Andrii Tykhonov
+#    used for debugging the STK tracking
+# ----------------------------------------------
+
+
+#
+# Sets some default verbose
+#
+/control/verbose 2
+/control/saveHistory
+/run/verbose 1
+/tracking/storeTrajectory 2
+#/tracking/verbose 1
+
+/gun/sourceGen 1
+/gun/sourceType 8
+
+/gps/particle e- 
+# the following two lines are equivalent
+#/gps/ene/type Mono 
+/gun/spectrumType 0
+
+
+#/stk/thicknessThickW 1 mm
+#/payload/update
+
+/gun/setParticlePosition  -300 -300 0 mm
+/gps/ang/minphi 225  deg 
+/gps/ang/maxphi 225  deg    
+
+
+
+/root/RootFile DmpSimu_Electron_ForStkKalmanDebug_5deg
+/gps/ene/mono  1. GeV
+/gps/ang/mintheta 0 deg 
+/gps/ang/maxtheta 5 deg    
+/run/beamOn 200
+
+/root/RootFile DmpSimu_Electron_ForStkKalmanDebug_10deg
+/gps/ene/mono  1. GeV
+/gps/ang/mintheta 5  deg 
+/gps/ang/maxtheta 10 deg    
+/run/beamOn 200
+
+/root/RootFile DmpSimu_Electron_ForStkKalmanDebug_15deg
+/gps/ene/mono  1. GeV
+/gps/ang/mintheta 10  deg 
+/gps/ang/maxtheta 15 deg    
+/run/beamOn 200
+
+/root/RootFile DmpSimu_Electron_ForStkKalmanDebug_20deg
+/gps/ene/mono  1. GeV
+/gps/ang/mintheta 15  deg 
+/gps/ang/maxtheta 20 deg    
+/run/beamOn 200
+
+/root/RootFile DmpSimu_Electron_ForStkKalmanDebug_25deg
+/gps/ene/mono  1. GeV
+/gps/ang/mintheta 20  deg 
+/gps/ang/maxtheta 25 deg    
+/run/beamOn 200
+
+/root/RootFile DmpSimu_Electron_ForStkKalmanDebug_30deg
+/gps/ene/mono  1. GeV
+/gps/ang/mintheta 25  deg 
+/gps/ang/maxtheta 30 deg    
+/run/beamOn 200
+
+/root/RootFile DmpSimu_Electron_ForStkKalmanDebug_35deg
+/gps/ene/mono  1. GeV
+/gps/ang/mintheta 30  deg 
+/gps/ang/maxtheta 35 deg    
+/run/beamOn 200
+
+/root/RootFile DmpSimu_Electron_ForStkKalmanDebug_40deg
+/gps/ene/mono  1. GeV
+/gps/ang/mintheta 35  deg 
+/gps/ang/maxtheta 40 deg    
+/run/beamOn 200
+
+/root/RootFile DmpSimu_Electron_ForStkKalmanDebug_45deg
+/gps/ene/mono  1. GeV
+/gps/ang/mintheta 40  deg 
+/gps/ang/maxtheta 45 deg    
+/run/beamOn 200
+
+/root/RootFile DmpSimu_Electron_ForStkKalmanDebug_50deg
+/gps/ene/mono  1. GeV
+/gps/ang/mintheta 45  deg 
+/gps/ang/maxtheta 50 deg    
+/run/beamOn 200
+
+/root/RootFile DmpSimu_Electron_ForStkKalmanDebug_55deg
+/gps/ene/mono  1. GeV
+/gps/ang/mintheta 50  deg 
+/gps/ang/maxtheta 55 deg    
+/run/beamOn 200
+
+/root/RootFile DmpSimu_Electron_ForStkKalmanDebug_60deg
+/gps/ene/mono  1. GeV
+/gps/ang/mintheta 55  deg 
+/gps/ang/maxtheta 60 deg    
+/run/beamOn 200
+
+/root/RootFile DmpSimu_Electron_ForStkKalmanDebug_65deg
+/gps/ene/mono  1. GeV
+/gps/ang/mintheta 60  deg 
+/gps/ang/maxtheta 65 deg    
+/run/beamOn 200
+
+/root/RootFile DmpSimu_Electron_ForStkKalmanDebug_70deg
+/gps/ene/mono  1. GeV
+/gps/ang/mintheta 65  deg 
+/gps/ang/maxtheta 70 deg    
+/run/beamOn 200
+
+/root/RootFile DmpSimu_Electron_ForStkKalmanDebug_75deg
+/gps/ene/mono  1. GeV
+/gps/ang/mintheta 70  deg 
+/gps/ang/maxtheta 75 deg    
+/run/beamOn 200
+
+/root/RootFile DmpSimu_Electron_ForStkKalmanDebug_80deg
+/gps/ene/mono  1. GeV
+/gps/ang/mintheta 75  deg 
+/gps/ang/maxtheta 80 deg    
+/run/beamOn 200
+
+/root/RootFile DmpSimu_Electron_ForStkKalmanDebug_85deg
+/gps/ene/mono  1. GeV
+/gps/ang/mintheta 80  deg 
+/gps/ang/maxtheta 85 deg    
+/run/beamOn 200
+
+/root/RootFile DmpSimu_Electron_ForStkKalmanDebug_90deg
+/gps/ene/mono  1. GeV
+/gps/ang/mintheta 85  deg 
+/gps/ang/maxtheta 90 deg    
+/run/beamOn 200
+

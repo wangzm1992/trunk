@@ -1,0 +1,29 @@
+# ----------------------------------------------
+# Example macro file for the DmpSimu
+# ----------------------------------------------
+# Author(s): Xin Wu 
+# Revised: Fan Rui Rui	2013-8-14
+# Revised: Xin Wu	2013-9-24
+#   - set ouput file name
+#   - switch to use Fabio's generator by setting /gun/sourceGen 1 
+# ----------------------------------------------
+
+#/root/RootFile DmpSimu_Electron_100GeV
+
+#
+# Sets some default verbose
+#
+/control/verbose 2
+/control/saveHistory
+/run/verbose 1
+/tracking/storeTrajectory 2
+
+/gun/sourceGen 1
+/gun/sourceType 0
+/gun/spectrumType 0
+/gps/particle e- 
+/gps/ene/mono 100 GeV
+
+/gps/pos/centre 0.005  0.005 -10. m  
+/gps/direction  0.     0.     10.    
+

@@ -1,0 +1,47 @@
+# ----------------------------------------------
+# Example macro file for the DmpSimu
+# ----------------------------------------------
+# Author(s): Xin Wu 
+# Revised: Fan Rui Rui	2013-8-14
+# Revised: Xin Wu	2013-9-24
+#   - set ouput file name
+#   - switch to use Fabio's generator by setting /gun/sourceGen 1 
+# ----------------------------------------------
+
+#/root/RootFile DmpSimu_Electron_100GeV
+
+#
+# Sets some default verbose
+#
+/control/verbose 2
+/control/saveHistory
+/run/verbose 1
+/tracking/storeTrajectory 2
+
+############################################################################################################################################################
+#  
+#  This macro describes the DAMPE beam test setup rotated for 0.02 degree. 
+#  Instead of rotatinf the DAMPE, the world is rotated in order to preserve native DAMPE coordinate system.
+#  The macro describes rotation of source only, hence should be used with the proper GDML geometry file describing the rotation of geometry.
+#
+#  NOTE: The particle source is assumed to be placed 20m from DAMPE, 
+#               y =  -20m * sin(0.02 deg) = -  0.006981316866201934 m ; 
+#               z =  -20m * cos(0.02 deg) = - 19.999998781530334 m; 
+#
+#        The x, y poisition is also shifted for 5mm in order to avoid hitting into dead region of DAMPE (crack between two silicon wafers)
+#               x =  0                         + 0.005 
+#               y = -0.006981316866201934      + 0.005 
+#
+############################################################################################################################################################
+
+/gun/sourceGen 1
+/gun/sourceType 0
+/gun/spectrumType 0
+/gps/particle e- 
+/gps/ene/mono 100 GeV
+
+/gps/pos/centre 0.005  -0.001981316866201934        -19.999998781530334 m     
+/gps/direction  0.      0.006981316866201934         19.999998781530334  
+
+
+
